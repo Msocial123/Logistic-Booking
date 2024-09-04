@@ -1,0 +1,160 @@
+body {
+    font-family: 'Roboto',sans-serif;
+    background: url("Images/backgnd3.jpg") no-repeat fixed center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin: 0; 
+}
+
+.container {
+    width: 90%;
+    max-width: 550px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color:rgba(255, 255, 255, 0.7);
+    border-radius: 8px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.header h1 {
+    font-size: 30px;
+    margin:0;
+    color: #0e0d0d;
+}
+
+.logo {
+    height: 50px; 
+    margin-right: 10px;
+}
+
+span {
+    color: rgb(238, 63, 63);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-section {
+    display: none; /* Hide all sections by default */
+    margin-bottom: 20px;
+}
+
+fieldset {
+    border: 1.5px solid #252323;
+    margin-bottom: 30px;
+    padding: 15px;
+    border-radius: 4px;
+}
+
+legend {
+    font-size: 25px;
+    font-weight: bold;
+    color: #353131;
+}
+
+label {
+    margin-top: 10px;
+    font-size: 15px;
+    color: #333;
+    display: block;
+}
+
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="number"],
+textarea {
+    width: calc(100% - 20px);
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #8e8d8d;
+    border-radius: 4px;
+    font-size: 14px;
+    background-color: #f9f9f9;
+    box-shadow: inset -1px -1px 3px rgba(255, 255, 255, 0.6),
+                inset 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+textarea {
+    resize: vertical;
+}
+
+.form-section:first-child {
+    display: block;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+/* Next and Previous buttons */
+.next-button, .prev-button, .cancel-button {
+    background-color: hsl(183, 63%, 51%);
+    float: inline-end;
+    transition: box-shadow 0.3s ease;
+}
+
+.prev-button{
+    float: left;
+}
+.cancel-button{
+    float: right;
+}
+
+.next-button:hover,
+.prev-button:hover,
+.cancel-button {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.submit-button {
+    background-color: #0056b3;
+    float: inline-end;
+}
+
+.submit-button:hover{
+    background-color: #168440;
+}
+
+/* Media queries for responsive design */
+@media (max-width: 600px) {
+    .container {
+        width: 90%;
+        padding: 10px;
+    }
+    
+    input[type="text"],
+    input[type="tel"],
+    input[type="email"],
+    input[type="number"],
+    textarea {
+        width: 100%;
+    }
+    
+    button[type="submit"] {
+        width: 100%;
+    }
+}

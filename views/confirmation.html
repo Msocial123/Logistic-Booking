@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Confirmation</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/Images/logo.png">
+    <link rel="stylesheet" href="/style3.css">
+</head>
+<body>
+    <div class="container">
+        <img src="Images/checkmark.png" alt="Confirmation Sign" class="confirmation-sign">
+        <h1>Booking Confirmed!</h1>
+        <p>Thank you for booking with us. Your logistics request has been successfully submitted.<br><br>Please save the booking ID for future cancellation.</p>
+        <p>Your booking ID is: <span id="bookingId"></span></p>
+        <a href="/" class="button">Back to Home</a>
+    </div>
+    
+    <script>
+        // Extract bookingId from query string
+        const urlParams = new URLSearchParams(window.location.search);
+        const bookingId = urlParams.get('bookingId');
+
+        // Display bookingId on the page
+        document.getElementById('bookingId').textContent = bookingId || 'Not available';
+    </script>
+</body>
+</html>
+
+

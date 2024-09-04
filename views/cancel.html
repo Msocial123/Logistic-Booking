@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cancel Booking</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="cancel-container">
+        <h1>Cancel Your Booking</h1>
+        <form id="cancelForm">
+            <label for="bookingId">Booking ID:</label>
+            <input type="text" id="bookingId" name="bookingId" required>
+            <div class="button-group">
+                <button type="button" onclick="submitCancel()">Cancel Booking</button>
+                <button type="button" onclick="goBack()">Go Back</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function submitCancel() {
+            const bookingId = document.getElementById('bookingId').value;
+            if (!bookingId) {
+                alert("Please enter a booking ID.");
+                return;
+            }
+
+            if (confirm("Are you sure you want to cancel this booking?")) {
+                fetch(`/api/bookings/${bookingId}`, {
+                    method: 'DELETE',
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.message) {
+                        alert(data.message);
+                        window.location.href = '/'; // Redirect to home page or another page
+                    }
+                })
+                .catch(error => console.error('Error:', error));
+            }
+        }
+
+        function goBack() {
+            window.history.back(); // Go back to the previous page
+        }
+    </script>
+</body>
+</html>

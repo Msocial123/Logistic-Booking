@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logistics Booking Form</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/Images/logo.png">
+    <link rel="stylesheet" href="/style2.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="/Images/logo.png" alt="Logo" class="logo">
+            <h1>Logistics Booking Form</h1>
+        </div>
+        <form action="/api/bookings" method="post">
+            <!-- Sender Details -->
+            <div class="form-section" id="sender-details">
+                <fieldset>
+                    <legend>Sender Details</legend>
+                    <label for="senderName">Sender Name:<span>*</span></label>
+                    <input type="text" id="senderName" name="senderName" required>
+
+                    <label for="senderMobile">Sender Mobile Number:<span>*</span></label>
+                    <input type="tel" id="senderMobile" name="senderMobile" pattern="\d{10}" required>
+
+                    <label for="senderEmail">Sender Email ID:<span>*</span></label>
+                    <input type="email" id="senderEmail" name="senderEmail" required>
+
+                    <label for="Sender Address">Sender Address:<span>*</span></label>
+                    <input type="text" id="senderHouseNumber" name="senderHouseNumber" placeholder="House Number" required>
+                    <input type="text" id="senderStreetName" name="senderStreetName" placeholder="Street Name" required>
+                    <input type="text" id="senderCity" name="senderCity" placeholder="City" required>
+                    <input type="text" id="senderState" name="senderState" placeholder="State" required>
+                    <input type="text" id="senderPinCode" name="senderPinCode" placeholder="Pin Code"  required>
+
+                </fieldset>
+                <button type="button" class="next-button" onclick="showNextSection('receiver-details')">Next</button>
+            </div>
+            
+            <div class="form-section" id="receiver-details" style="display:none;">
+                <fieldset>
+                    <legend>Receiver Details</legend>
+                    <label for="receiverName">Receiver Name:<span>*</span></label>
+                    <input type="text" id="receiverName" name="receiverName" required>
+
+                    <label for="receiverMobile">Receiver Mobile Number:<span>*</span></label>
+                    <input type="tel" id="receiverMobile" name="receiverMobile" pattern="\d{10}" required>
+
+                    <label for="receiverEmail">Receiver Email ID:<span>*</span></label>
+                    <input type="email" id="receiverEmail" name="receiverEmail" required>
+
+                    <label for="Receiver Details">Receiver Address:<span>*</span></label>
+                    <input type="text" id="receiverHouseNumber" name="receiverHouseNumber" placeholder="House Number" required>
+                    <input type="text" id="receiverStreetName" name="receiverStreetName" placeholder="Street Name" required>
+                    <input type="text" id="receiverCity" name="receiverCity" placeholder="City" required>
+                    <input type="text" id="receiverState" name="receiverState" placeholder="State" required>
+                    <input type="text" id="receiverPinCode" name="receiverPinCode" placeholder="Pin Code"  required>
+
+                </fieldset>
+                <button type="button" class="prev-button" onclick="showPreviousSection('sender-details')">Previous</button>
+                <button type="button" class="next-button" onclick="showNextSection('item-details')">Next</button>
+            </div>
+
+            <!-- Item Details -->
+            <div class="form-section" id="item-details" style="display:none;">
+                <fieldset>
+                    <legend>Item Details</legend>
+                    <label for="itemDescription">Item Description:<span>*</span></label>
+                    <textarea id="itemDescription" name="itemDescription" rows="2" required></textarea>
+                    
+                    <label for="itemWeight">Item Weight (kg):<span>*</span></label>
+                    <input type="number" id="itemWeight" name="itemWeight" min="0" max="100" required>
+                </fieldset>
+                <button type="button" class="prev-button" onclick="showPreviousSection('receiver-details')">Previous</button>
+                <button type="submit" class="submit-button">Submit</button>
+            </div>
+        </form>
+    </div>
+    
+    <script src="/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+body {
+    font-family:  'Roboto', sans-serif;
+    background-image: url("Images/backgnd1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.cancel-container {
+    border-top: 4px solid rgb(52, 110, 211);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  
+    align-items: center;      
+    height: 40%;            
+    text-align: center;       
+    width: 35%;
+    margin: 0 auto;           
+    padding: 20px;
+    background-color:rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.cancel-container h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.cancel-container label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.cancel-container input {
+    font-size: 1em;
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 80%;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.button-group button {
+    font-size: 1.2em;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button-group button:first-of-type {
+    background-color: #f04b5b;
+    color: #fff;
+}
+
+.button-group button:first-of-type:hover {
+    background-color: #c82333;
+}
+
+.button-group button:last-of-type {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.button-group button:last-of-type:hover {
+    background-color: #0056b3;
+}
