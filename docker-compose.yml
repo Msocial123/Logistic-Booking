@@ -1,0 +1,21 @@
+version: '3.8'
+services:
+  logistics-app:
+    build: .
+    ports:
+      - '3029:3029'
+    depends_on:
+      - mongodb
+    environment:
+      - MONGO_URI=mongodb://mongodb:27017/logisticDB
+    volumes:
+      - .:/usr/src/app  
+    working_dir: /usr/src/app
+    command: npm start  
+
+  mongodb:
+    image: mongo:latest
+    ports:
+      - '27017:27017'
+    volumes:
+      - ./data:/data/db  

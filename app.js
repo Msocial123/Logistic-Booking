@@ -28,12 +28,12 @@ app.get('/cancel.html', (req, res) => {
     res.sendFile(path.join(__dirname, 'views', 'cancel.html'));
 });
 
-const mongoURI = process.env.MONGODB_URI;
-if (!mongoURI) {
+const MONGO_URI = process.env.MONGO_URI;
+if (!MONGO_URI) {
     console.error('MongoDB URI is not defined in environment variables.');
     process.exit(1);
 }
-mongoose.connect(mongoURI, {
+mongoose.connect(MONGO_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
@@ -105,7 +105,7 @@ app.delete('/api/bookings/:id', async (req, res) => {
     }
 });
 
-const PORT = process.env.PORT || 3028;
+const PORT = process.env.PORT || 3029;
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });

@@ -1,0 +1,8 @@
+db.bookings.find().pretty()
+show collections
+use logisticDB
+show dbs
+db.bookings.find().pretty()
+show collections
+use logisticDB
+show dbs
